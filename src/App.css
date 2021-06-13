@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+hr {
+  height: 5px;
+  color: #123455;
+  background-color: #d48832;
+  border: none;
+}
+
+h1{
+  color: #d48832;
+}
+
+img{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.hoopersBlack{
+  background-color: #1d1d1b;
+}
+
+.btnColor{
+  background-color: #ffba00;
+  color: #1d1d1b
+}

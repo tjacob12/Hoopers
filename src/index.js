@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import img1 from './assets/img1.png'
+import ballislife from './assets/ballislife.png'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App img={img1} heading="Courts" btnText="Our Courts"/>
+    <App img={ballislife} heading="Products" btnText="Shop Now"/>
   </React.StrictMode>,
   document.getElementById('root')
 );
