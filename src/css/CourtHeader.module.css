@@ -1,0 +1,41 @@
+.divPosition{
+    position: relative;
+    top:57%;
+}
+
+.txtPosition{
+    position: relative;
+    transform: translateX(21%);
+}
+
+.courthr1 {
+    background-color:white;
+    height: 0.25vh;
+    width: 100vw;
+    border-radius: 25px;
+    position: relative;
+    top: 53%;
+    left: 0;
+    transform: translateX(-20%);
+}
+
+.courthr2 {
+    background-color:white;
+    height: 0.25vh;
+    width: 100vw;
+    border-radius: 25px;
+    perspective: 1px;
+    position: relative;
+    top: 80%;
+    left: 0;
+    transform: translateX(20%);
+}
+
+.background{
+    background-image: url("../assets/ameixoeira.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+  

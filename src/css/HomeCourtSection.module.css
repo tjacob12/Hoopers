@@ -1,0 +1,68 @@
+  .sectionhr {
+    /* height: px; */
+    color: #123455;
+    background-color: #d48832;
+    height: 5px;
+    border: none;
+    animation: slideinleft 2.5s 1;
+    position: relative;
+  }
+  
+  h1{
+    color: #d48832;
+  }
+  
+  img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .hoopersBlack{
+    background-color: #1d1d1b;
+  }
+  
+  .btnColor{
+    background-color: #ffba00;
+    color: #1d1d1b
+  }
+
+  .slideUp{
+    animation: slideinup 1s 1;
+  }
+
+  .slideRight{
+    animation: slideinright 2.5s 1;
+  }
+
+  @keyframes slideinleft {
+    from {
+      transform: translateX(-75%);
+    }
+  
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes slideinup {
+    from {
+      transform: translateY(100%);
+    }
+  
+    to {
+      transform: translateY(0%);
+    }
+  }
+
+  @keyframes slideinright {
+    from {
+      transform: translateX(75%);
+    }
+  
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+  

@@ -2,7 +2,7 @@ import {BrowserRouter, Route} from 'react-router-dom'
 import Home from './components/Home.js'
 import Courts from './components/Courts.js'
 import Shop from './components/Shop.js'
-import './App.css';
+import './css/App.css';
 
 function App(props) {
   return (
