@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import 'bootstrap/dist/css/bootstrap.css';
-// import Container from 'react-bootstrap/Container';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
 //  import  Row from 'react-bootstrap/Row';
 //  import Col from 'react-bootstrap/Col';
 import Video from '../../assets/backgroundvideo.mp4';
-
+import Button from 'react-bootstrap/Button';
 import HomeHeaderCss from '../../css/HomeHeader.module.css';
 
 
@@ -12,7 +12,7 @@ import HomeHeaderCss from '../../css/HomeHeader.module.css';
 class HomeHeader extends Component {
   render() {
     return (
-        <div className = {`${HomeHeaderCss.HomeHeader}`}>
+        <Container fluid className="vh-100">
             <video autoPlay loop muted
             style= {{
                 position:'absolute',
@@ -27,17 +27,17 @@ class HomeHeader extends Component {
                 <source src={Video} type='video/mp4' />
             </video>
 
-            <div className = {`${HomeHeaderCss.VideoButton}`}>
-                <button type="button" className="btn btn-warning btn-lg">WATCH VIDEO</button>
+            <div className = "text-center position-relative">
+                <Button className= {`${HomeHeaderCss.vidButton} btnColor`}>WATCH VIDEO</Button>
             </div>
 
-            <div className={`${HomeHeaderCss.ShopLink}`}>
-                <a href="#" className="link">SHOP</a>
+            {/* <div className={`${HomeHeaderCss.ShopLink}`}>
+                SHOP
             </div>
 
             <div className = {`${HomeHeaderCss.PTLink}`}>
-                <a href="#" className="link">PT</a>
-            </div>
+                PT
+            </div> */}
 
             <div className = 'container'>
             {/* <form>
@@ -54,7 +54,7 @@ class HomeHeader extends Component {
                 
             </div> */}
             </div>  
-    </div>
+    </Container>
     )
   }
 }

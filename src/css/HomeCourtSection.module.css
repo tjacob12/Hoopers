@@ -4,7 +4,6 @@
     background-color: #d48832;
     height: 5px;
     border: none;
-    animation: slideinleft 2.5s 1;
     position: relative;
   }
   
@@ -28,11 +27,15 @@
   }
 
   .slideUp{
-    animation: slideinup 1s 1;
+    animation: slideinup 2.0s 1;
+  }
+
+  .slideLeft{
+    animation: slideinleft 2.0s 1;
   }
 
   .slideRight{
-    animation: slideinright 2.5s 1;
+    animation: slideinright 2.0s 1;
   }
 
   @keyframes slideinleft {

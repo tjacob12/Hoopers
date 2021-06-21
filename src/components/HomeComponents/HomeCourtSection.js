@@ -1,3 +1,4 @@
+import { React, useRef } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -5,29 +6,35 @@ import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.css';
 import HomeCourtSectionCss from '../../css/HomeCourtSection.module.css';
 import {Link} from 'react-router-dom'
-
+import useInView from "react-cool-inview";
 
 function HomeCourtSection(props) {
-    // console.log(props)
+    const { observe, inView } = useInView({
+      // Track the actual visibility of the target
+      trackVisibility: true,
+      // Set a minimum delay between notifications, it must be set to 100 (ms) or greater
+      // For performance perspective, use the largest tolerable value as much as possible
+      delay: 100,
+    });
   
     return (
-      <Container fluid className="vh-100 p-5 hoopersBlack">
+      <Container ref={observe} fluid className="vh-100 p-5 hoopersBlack">
         <Row>
-          <Col xs={8}><hr className={HomeCourtSectionCss.sectionhr}/></Col>
+          <Col xs={8}><hr className={`${HomeCourtSectionCss.sectionhr} ${inView ? HomeCourtSectionCss.slideLeft : "none"}`}/></Col>
           <Col></Col>
-          <Col className={HomeCourtSectionCss.slideRight}><h1>{props.heading}</h1></Col>
+          <Col className={`${inView ? HomeCourtSectionCss.slideRight : "None"}`}><h1>{props.heading}</h1></Col>
           <Col></Col>
         </Row>
         
         <Row className="p-2 h-100">
           <Col xs={1}></Col>
           <Col xs={5} className="h-100">
-            <div className={`h-100 ${HomeCourtSectionCss.slideUp}`}>
+            <div className={`h-100 ${inView ? HomeCourtSectionCss.slideUp : "None"}`}>
               <img src={props.img} alt="img1"/>
             </div>
           </Col>
           <Col className="d-flex align-items-center">
-            <div className={`text-white ${HomeCourtSectionCss.slideUp}`}>
+            <div className={`text-white ${inView ? HomeCourtSectionCss.slideUp : "None"}`}>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
               Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
               It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 

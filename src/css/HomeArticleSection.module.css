@@ -3,7 +3,6 @@
     background-color: #d48832;
     height: 5px;
     border: none;
-    animation: slideinright 2.5s 1;
     position: relative;
 }
   
@@ -29,6 +28,48 @@ h1{
     text-align: center;
 }
 
+.slideUp{
+    animation: slideinup 2.0s 1;
+}
+
+.slideUp2{
+    animation: slideinup 1.25s 1;
+}
+
+.slideLeft{
+    animation: slideinleft 2.0s 1;
+}
+
 .slideRight{
-    animation: slideinright 2.5s 1;
+    animation: slideinright 2.0s 1;
+}
+
+@keyframes slideinleft {
+    from {
+      transform: translateX(-75%);
+    }
+  
+    to {
+      transform: translateX(0%);
+    }
+}
+
+@keyframes slideinup {
+    from {
+      transform: translateY(100%);
+    }
+  
+    to {
+      transform: translateY(0%);
+    }
+}
+
+@keyframes slideinright {
+    from {
+      transform: translateX(75%);
+    }
+  
+    to {
+      transform: translateX(0%);
+    }
 }
