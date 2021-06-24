@@ -6,8 +6,9 @@
     position: relative;
 }
   
-h1{
+.articleh1{
     color: #d48832;
+    font-size: 4.25em;
 }
 
 .padding-0{

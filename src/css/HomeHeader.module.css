@@ -1,65 +1,9 @@
-  /* .Container {
-    position:relative;
-    height:100%;
-    overflow:hidden;
-  } */
-  
-  /* video { */
-    /* width:100%;
-    height:120vh;
-    overflow: hidden;
-  } */
-  
-  
-  
-  /* .VideoButton {
-    position: relative;
-    left: 15px;
-    top:625px;
-    text-align: center;
-   
-  } */
-  
-  .ShopLink{
-    position:relative;
-    left:600px;
-    top:-23px;
-    font-size:18px;
-    font-weight: bold;
+  .img{
+    height: auto;
+    width: 10em;
   }
     
   .vidButton{
     position: relative;
-    top:40em;
-  }
-
-  a{
-    text-decoration: none;
-    color:#D48832;
-  }
-  
-  .PTLink {
-    position:relative;
-    left:650px;
-    top:-49px;
-    font-size:18px;
-    font-weight:bold;
-  }
-  
-  /* .input-group{
-    position:absolute;
-    left:1100px;
-    top:625px;
-  }
-  input{
-    border:7px solid black;
-    height:50px;
-    width:310px;
-  } */
-  
-  .search {
-    position:absolute;
-    left:1100px;
-    top:625px;
-    transform: translate(-50%,-50%);
+    top:35em;
   }

@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import HomeCourtSectionCss from '../../css/HomeCourtSection.module.css';
 import {Link} from 'react-router-dom'
 import useInView from "react-cool-inview";
+import HomeLinks from './HomeLinks';
 
 function HomeCourtSection(props) {
     const { observe, inView } = useInView({
@@ -19,10 +20,12 @@ function HomeCourtSection(props) {
   
     return (
       <Container ref={observe} fluid className="vh-100 p-5 hoopersBlack">
+        <HomeLinks/>
+
         <Row>
-          <Col xs={8}><hr className={`${HomeCourtSectionCss.sectionhr} ${inView ? HomeCourtSectionCss.slideLeft : "none"}`}/></Col>
+          <Col xs={8}><hr className={`mt-5 ${HomeCourtSectionCss.sectionhr} ${inView ? HomeCourtSectionCss.slideLeft : "none"}`}/></Col>
           <Col></Col>
-          <Col className={`${inView ? HomeCourtSectionCss.slideRight : "None"}`}><h1>{props.heading}</h1></Col>
+          <Col className={`${inView ? HomeCourtSectionCss.slideRight : "None"}`}><h1 className={`${HomeCourtSectionCss.courth1}`}>{props.heading}</h1></Col>
           <Col></Col>
         </Row>
         

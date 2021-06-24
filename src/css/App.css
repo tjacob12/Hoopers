@@ -46,3 +46,8 @@
   border-color: #ffba00;
   color: #1d1d1b
 }
+
+.img{
+  height: auto;
+  width: 10em;
+}

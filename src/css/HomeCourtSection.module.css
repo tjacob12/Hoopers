@@ -7,8 +7,9 @@
     position: relative;
   }
   
-  h1{
+  .courth1{
     color: #d48832;
+    font-size: 5em;
   }
   
   img{
