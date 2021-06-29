@@ -36,7 +36,7 @@ function HomeArticleSection(props) {
             </div>
 
             <Row>
-                <Col xs= {2} className={`${inView ? HomeArticleCss.slideLeft : "none"}`}><h1>Articles</h1></Col>
+                <Col xs= {2} className={`${inView ? HomeArticleCss.slideLeft : "none"}`}><h1 className={`${HomeArticleCss.articleh1}`}>Articles</h1></Col>
                 <Col><hr className={`${HomeArticleCss.articlehr} ${inView ? HomeArticleCss.slideRight : "none"}`}/></Col>
             </Row>
 
