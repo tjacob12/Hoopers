@@ -8,11 +8,7 @@ import HomeCourtSectionCss from '../../css/HomeCourtSection.module.css';
 import LinkAndMenuCss from '../../css/LinkAndMenu.module.css';
 import {Link} from 'react-router-dom'
 import useInView from "react-cool-inview";
-<<<<<<< HEAD
-import HomeLinks from './HomeLinks';
-=======
 import BurgerMenu from '../BurgerMenu.js'
->>>>>>> jason-dev
 
 function HomeCourtSection(props) {
     const { observe, inView } = useInView({
