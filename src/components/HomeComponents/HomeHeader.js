@@ -17,18 +17,30 @@ class HomeHeader extends Component {
 
             <BurgerMenu/>
 
-            <video>
+            <div>
               <div className={`${LinkAndMenuCss.HeaderShopLink}`}>
                   SHOP |
+              </div>
+
+              <div className = {`${LinkAndMenuCss.HeaderPTLink}`}>
+                  PT
+              </div>
+            </div>
+
+            <video autoPlay loop muted
+            style= {{
+                position:'absolute',
+                width:'100vw',
+                left:'50%',
                 top:'50%',
                 height:'100vh',
                 objectFit:'cover',
                 transform:'translate(-50%,-50%)',
                 zIndex:'-1'
             }}>
-              </div>
                 <source src={Video} type='video/mp4' />
             </video>
+
 
             <div className = "text-center position-relative">
                 <Button className= {`${HomeHeaderCss.vidButton} btnColor`}>WATCH VIDEO</Button>
