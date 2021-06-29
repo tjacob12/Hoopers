@@ -8,12 +8,15 @@ import Button from 'react-bootstrap/Button';
 import HomeHeaderCss from '../../css/HomeHeader.module.css';
 import LinkAndMenuCss from '../../css/LinkAndMenu.module.css';
 import logo from '../../assets/hooperslogo.png'
+import BurgerMenu from '../BurgerMenu.js'
 
 class HomeHeader extends Component {
   render() {
     return (
         <Container fluid className="vh-100">
             <img src={logo} alt="logo" className={`${HomeHeaderCss.img}`}/>
+
+            <BurgerMenu/>
 
             <div>
               <div className={`${LinkAndMenuCss.HeaderShopLink}`}>
