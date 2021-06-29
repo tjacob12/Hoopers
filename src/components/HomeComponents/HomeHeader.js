@@ -6,13 +6,25 @@ import Container from 'react-bootstrap/Container';
 import Video from '../../assets/backgroundvideo.mp4';
 import Button from 'react-bootstrap/Button';
 import HomeHeaderCss from '../../css/HomeHeader.module.css';
-
-
+import LinkAndMenuCss from '../../css/LinkAndMenu.module.css';
+import logo from '../../assets/hooperslogo.png'
 
 class HomeHeader extends Component {
   render() {
     return (
         <Container fluid className="vh-100">
+            <img src={logo} alt="logo" className={`${HomeHeaderCss.img}`}/>
+
+            <div>
+              <div className={`${LinkAndMenuCss.HeaderShopLink}`}>
+                  SHOP |
+              </div>
+
+              <div className = {`${LinkAndMenuCss.HeaderPTLink}`}>
+                  PT
+              </div>
+            </div>
+
             <video autoPlay loop muted
             style= {{
                 position:'absolute',
@@ -30,14 +42,6 @@ class HomeHeader extends Component {
             <div className = "text-center position-relative">
                 <Button className= {`${HomeHeaderCss.vidButton} btnColor`}>WATCH VIDEO</Button>
             </div>
-
-            {/* <div className={`${HomeHeaderCss.ShopLink}`}>
-                SHOP
-            </div>
-
-            <div className = {`${HomeHeaderCss.PTLink}`}>
-                PT
-            </div> */}
 
             <div className = 'container'>
             {/* <form>

@@ -3,6 +3,7 @@ import ballislife from '../assets/ballislife.png'
 import HomeHeader from './HomeComponents/HomeHeader';
 import HomeCourtSection from './HomeComponents/HomeCourtSection';
 import HomeArticleSection from './HomeComponents/HomeArticleSection';
+import Footer from './Footer';
 import ReactPageScroller from 'react-page-scroller';
 import ReactFullpage from '@fullpage/react-fullpage';
 import React, { Component } from 'react';
@@ -52,6 +53,10 @@ function Home(props) {
 
                     <div className="section">
                         <HomeCourtSection img={ballislife} heading="Products" to="/Shop" btnText="Shop Now"/>
+                    </div>
+
+                    <div className="section">
+                        <Footer/>
                     </div>
                 </ReactFullpage.Wrapper>
                 );

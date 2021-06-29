@@ -19,14 +19,6 @@
     text-align: center;
    
   } */
-  
-  .ShopLink{
-    position:relative;
-    left:600px;
-    top:-23px;
-    font-size:18px;
-    font-weight: bold;
-  }
     
   .vidButton{
     position: relative;
@@ -38,24 +30,13 @@
     color:#D48832;
   }
   
-  .PTLink {
-    position:relative;
-    left:650px;
-    top:-49px;
-    font-size:18px;
-    font-weight:bold;
+  .img{
+    position: absolute;
+    height: 3em;
+    width: auto;
+    left: 43em;
+    top: 1.5em;
   }
-  
-  /* .input-group{
-    position:absolute;
-    left:1100px;
-    top:625px;
-  }
-  input{
-    border:7px solid black;
-    height:50px;
-    width:310px;
-  } */
   
   .search {
     position:absolute;

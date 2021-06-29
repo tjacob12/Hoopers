@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.css';
 import HomeCourtSectionCss from '../../css/HomeCourtSection.module.css';
+import LinkAndMenuCss from '../../css/LinkAndMenu.module.css';
 import {Link} from 'react-router-dom'
 import useInView from "react-cool-inview";
 
@@ -19,6 +20,16 @@ function HomeCourtSection(props) {
   
     return (
       <Container ref={observe} fluid className="vh-100 p-5 hoopersBlack">
+        <div>
+            <div className={`${LinkAndMenuCss.SectionShopLink}`}>
+                SHOP |
+            </div>
+
+            <div className = {`${LinkAndMenuCss.SectionPTLink}`}>
+                PT
+            </div>
+        </div>
+
         <Row>
           <Col xs={8}><hr className={`${HomeCourtSectionCss.sectionhr} ${inView ? HomeCourtSectionCss.slideLeft : "none"}`}/></Col>
           <Col></Col>

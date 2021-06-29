@@ -1,0 +1,35 @@
+.HeaderShopLink {
+    position: fixed;
+    font-size: 1.75em;
+    font-weight:bold;
+    color:#D48832;
+    left: 46.5em;
+    top: 1em;
+} 
+
+.HeaderPTLink {
+    position: fixed;
+    font-size: 1.75em;
+    font-weight:bold;
+    color:#D48832;
+    left: 50em;
+    top: 1em;
+} 
+
+.SectionShopLink {
+    position: absolute;
+    font-size: 1.75em;
+    font-weight:bold;
+    color:#D48832;
+    left: 46.5em;
+    top: 1px;
+} 
+
+.SectionPTLink {
+    position: absolute;
+    font-size: 1.75em;
+    font-weight:bold;
+    color:#D48832;
+    left: 50em;
+    top: 1px;
+} 

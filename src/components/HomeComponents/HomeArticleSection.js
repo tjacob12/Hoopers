@@ -9,6 +9,7 @@ import saraguerreiro from '../../assets/saraguerreiro.png'
 import liz from '../../assets/liz.png'
 import chelas from '../../assets/chelas.png'
 import useInView from "react-cool-inview";
+import LinkAndMenuCss from '../../css/LinkAndMenu.module.css';
 
 function HomeArticleSection(props) {
     const { observe, inView } = useInView({
@@ -21,8 +22,18 @@ function HomeArticleSection(props) {
   
     return (
         <Container ref={observe} fluid className="vh-100 p-5 hoopersBlack">
+            <div className="mb-5">
+              <div className={`${LinkAndMenuCss.SectionShopLink}`}>
+                  SHOP |
+              </div>
+
+              <div className = {`${LinkAndMenuCss.SectionPTLink}`}>
+                  PT
+              </div>
+            </div>
+
             <Row>
-                <Col xs= {2} className={`${inView ? HomeArticleCss.slideLeft : "none"}`}><h1>articles</h1></Col>
+                <Col xs= {2} className={`${inView ? HomeArticleCss.slideLeft : "none"}`}><h1>Articles</h1></Col>
                 <Col><hr className={`${HomeArticleCss.articlehr} ${inView ? HomeArticleCss.slideRight : "none"}`}/></Col>
             </Row>
 
