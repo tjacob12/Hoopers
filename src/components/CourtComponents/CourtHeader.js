@@ -5,10 +5,7 @@ import logo from '../../assets/hooperslogo.png'
 function CourtHeader(props) {
     return (
       <Container fluid className={`pt-5 vh-100 ${CourtHeaderCss.background}`}>
-        <div className={`rounded mx-auto d-block ${CourtHeaderCss.img}`}>
-            <img src={logo} alt="logo"/>
-        </div>
-
+        <img src={logo} alt="logo" className={`${CourtHeaderCss.img}`}/>
         <div className={CourtHeaderCss.divPosition}>
           <hr className={CourtHeaderCss.courthr1}/>
             <div className={`text-white h1 ${CourtHeaderCss.txtPosition}`}>

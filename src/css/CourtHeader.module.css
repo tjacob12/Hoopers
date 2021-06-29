@@ -40,7 +40,9 @@
 }
 
 .img{
-    height: auto;
-    width: 10em;
-  }
+    position: absolute;
+    height: 3em;
+    width: auto;
+    left: 43em
+}
   

@@ -1,0 +1,54 @@
+.card{
+    background-color: #080808;
+    height: 75vh;
+    width: 70vw;
+}
+
+.text{
+    font-size: 1.5em;
+    color: white;
+}
+
+.dropzone {
+    border-color: #d48832;
+    border-style: dotted;
+}
+
+.leftarrow{
+    cursor:pointer;
+    width: 1.2em;
+    margin-top: 1em;
+    margin-right: 1em;
+}
+
+.rightarrow{
+    cursor:pointer;
+    width: 1.2em;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.x{
+    cursor:pointer;
+    width: 2.5em;
+    height: auto;
+    position: absolute;
+    top:0;
+    right:0;
+}
+
+.steps{
+    position: absolute;
+    bottom:1em;
+    right:19em;
+}
+
+.upload{
+    width: 3.5em;
+    margin-top: 2em;
+}
+
+.subheaders{
+    font-size: 2em;
+    color: #d48832
+}
