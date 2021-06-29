@@ -9,11 +9,10 @@ import saraguerreiro from '../../assets/saraguerreiro.png'
 import liz from '../../assets/liz.png'
 import chelas from '../../assets/chelas.png'
 import useInView from "react-cool-inview";
-<<<<<<< HEAD
 import HomeLinks from './HomeLinks';
-=======
 import LinkAndMenuCss from '../../css/LinkAndMenu.module.css';
->>>>>>> jason-dev
+import BurgerMenu from '../BurgerMenu.js'
+
 
 function HomeArticleSection(props) {
     const { observe, inView } = useInView({
@@ -66,6 +65,7 @@ function HomeArticleSection(props) {
                 <Col xs={1}></Col>
             </Row>
 
+            <BurgerMenu/>
             {/* <Button variant="warning">more articles</Button>{' '} */}
         </Container>
     );

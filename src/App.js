@@ -4,10 +4,12 @@ import Courts from './components/Courts.js'
 import Shop from './components/Shop.js'
 import Map from './components/Map.js'
 import './css/App.css';
+import BurgerMenu from './components/BurgerMenu.js'
 
 function App(props) {
   return (
     // <Map/>
+    // <BurgerMenu/>
     <BrowserRouter>
       <Route path='/' exact component={Home}/>
       <Route path='/Courts' component={Courts}/>
