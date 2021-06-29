@@ -9,7 +9,6 @@ import saraguerreiro from '../../assets/saraguerreiro.png'
 import liz from '../../assets/liz.png'
 import chelas from '../../assets/chelas.png'
 import useInView from "react-cool-inview";
-import HomeLinks from './HomeLinks';
 import LinkAndMenuCss from '../../css/LinkAndMenu.module.css';
 import BurgerMenu from '../BurgerMenu.js'
 
