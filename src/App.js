@@ -9,13 +9,13 @@ import BurgerMenu from './components/BurgerMenu.js'
 
 function App(props) {
   return (
-    // <Map/>
-    <BrowserRouter>
-      <Route path='/' exact component={Home}/>
-      <Route path='/Courts' component={Courts}/>
-      <Route path='/Shop' component={Shop}/>
-      <Route path='/Video' component={Video}/>
-    </BrowserRouter>
+    <Map/>
+    // <BrowserRouter>
+    //   <Route path='/' exact component={Home}/>
+    //   <Route path='/Courts' component={Courts}/>
+    //   <Route path='/Shop' component={Shop}/>
+    //   <Route path='/Video' component={Video}/>
+    // </BrowserRouter>
   );
 }
 

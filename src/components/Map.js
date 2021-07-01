@@ -11,6 +11,15 @@ import CardOne from './MapComponents/CardOne';
 import CardTwo from './MapComponents/CardTwo';
 import CardThree from './MapComponents/CardThree';
 import CardInfo from './MapComponents/CardInfo';
+import firebase from '../firebase/firebase';
+import Geocode from "react-geocode";
+import markerimg from '../assets/marker.png'
+
+Geocode.setApiKey("AIzaSyDfOLH2NquwD8PxuLKGLumRQCETj46emOE");
+
+Geocode.setLanguage("en");
+
+Geocode.setRegion("us");
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiamFzb25qaWFuZzY5NjYiLCJhIjoiY2txZW12bGU5MWVhYzJ4czczN3Nybzh1cyJ9.tn_f2bp6mikg48g-nMZOzA'
 
@@ -30,10 +39,13 @@ class Map extends Component{
             courtIG: "",
             courtFree: false,
             courtGameTime: "",
-            courtAbout: ""
+            courtAbout: "",
         }
 
         this.mapElement = React.createRef()
+
+        this.db = firebase.instance().db
+        this.storage = firebase.instance().storage
     }
 
     updateCard = (cardNum) => {
@@ -44,36 +56,104 @@ class Map extends Component{
         this.setState({courtLocation: Location})
     }
 
-    updateCourtImage = (Image) => {
-        this.setState({courtImage: Image})
+    updateCourtImage = (Images) => {
+        this.setState({courtImage: Images})
     }
 
     updateCourtEmail = (Email) => {
         this.setState({courtEmail: Email})
-        console.log(Email)
     }
 
     updateCourtIG = (IG) => {
         this.setState({courtIG: IG})
-        console.log(IG)
     }
 
     updateCourtFree = (Free) => {
         this.setState({courtFree: Free})
-        console.log(Free)
     }
 
     updateCourtGameTime = (GameTime) => {
         this.setState({courtGameTime: GameTime})
-        console.log(GameTime)
     }
 
     updateCourtAbout = (About) => {
         this.setState({courtAbout: About})
-        console.log(About)
     }
 
-    displayCard = () => {
+    uploadToFirebase = async () => {
+        console.log(this.state)
+
+        console.log(this.state.courtImage)
+
+        this.state.courtImage.forEach(async (file) => {
+            let filepath = `${this.state.courtLocation}/${file.name}`
+            await this.storage.ref(filepath).put(file);
+        })
+
+        let response = await Geocode.fromAddress(this.state.courtLocation)
+        const { lat, lng } = response.results[0].geometry.location
+
+        await this.db.collection("Courts").add({
+            courtLocation: this.state.courtLocation,
+            courtEmail: this.state.courtEmail,
+            courtIG: this.state.courtIG,
+            courtFree: this.state.courtFree,
+            courtGameTime: this.state.courtGameTime,
+            courtAbout: this.state.courtAbout,
+            courtLngLat: [lng,lat]
+            // courtLngLat: {
+            //     lng:lng,
+            //     lat:lat
+            // }
+        })
+
+        this.addMarker([lng,lat])
+        console.log("uploaded")
+    }
+
+    addMarker = (lngLat) => {
+        const el = document.createElement('div')
+        el.className = 'marker'
+        el.style.backgroundImage = `url(${markerimg})`
+        el.style.backgroundRepeat = 'no-repeat'
+        el.style.backgroundPosition = 'center'
+        el.style.backgroundSize = 'cover'
+        el.style.width = '50px'
+        el.style.height = '50px'
+        el.addEventListener('click', async (e) => {
+            // Prevent the `map.on('click')` from being triggered
+            e.stopPropagation();
+            let response = await this.db.collection("Courts").where("courtLngLat", "array-contains", lngLat[0]).get()
+            response.forEach(doc => {
+                if(doc.data().courtLngLat[1] === lngLat[1]){
+                    this.setState({
+                        currentCard: 4,
+                        data: doc.data()
+                    })
+                }
+            })
+        });
+        el.style.cursor = 'pointer'
+
+        const marker = new mapboxgl.Marker({
+            element: el,
+        })
+        .setLngLat(lngLat)
+        .addTo(this.map)
+    }
+
+    showCourt = (data) => {
+        return <CardInfo 
+            updateCard={this.updateCard}
+            location={data.courtLocation} 
+            gametime={data.courtGameTime}
+            free={data.courtFree}
+            about={data.courtAbout}
+            storage={this.storage}>
+        </CardInfo>
+    }
+
+    displayCard = (data) => {
         const num = this.state.currentCard
         switch(true){
             case (num===1):
@@ -88,13 +168,13 @@ class Map extends Component{
                        >
                        </CardTwo>
             case (num===3):
-                return <CardThree updateCard={this.updateCard} updateCourtAbout={this.updateCourtAbout}></CardThree>
+                return <CardThree updateCard={this.updateCard} updateCourtAbout={this.updateCourtAbout} uploadToFirebase={this.uploadToFirebase}></CardThree>
             default:
                 break;
         }
     }
 
-    componentDidMount(){
+    async componentDidMount(){
         const {latitude,longitude,zoom} = this.state
 
         this.map = new mapboxgl.Map({
@@ -105,58 +185,18 @@ class Map extends Component{
             // center: [longitude,latitude],
             // zoom: zoom
         })
+
+        const snapshot = await this.db.collection('Courts').get()
+        snapshot.docs.forEach(doc => {
+            // console.log(doc.data().courtLngLat)
+            this.addMarker([doc.data().courtLngLat[0],doc.data().courtLngLat[1]])
+            // this.addMarker([doc.data().courtLngLat.lng,doc.data().courtLngLat.lat])
+        })
+
     }
 
     render(){
         const {latitude,longitude,zoom} = this.state
-
-        var geojson = {
-            type: 'FeatureCollection',
-            features: [{
-              type: 'Feature',
-              geometry: {
-                type: 'Point',
-                coordinates: [-77.032, 38.913]
-              },
-              properties: {
-                title: 'Mapbox',
-                description: 'Washington, D.C.'
-              }
-            },
-            {
-              type: 'Feature',
-              geometry: {
-                type: 'Point',
-                coordinates: [-122.414, 37.776]
-              },
-              properties: {
-                title: 'Mapbox',
-                description: 'San Francisco, California'
-              }
-            }]
-        };
-
-        // geojson.features.forEach(function (marker) {
-        //     // create a HTML element for each feature
-        //     var el = document.createElement('div');
-        //     el.className = 'marker';
-             
-        //     // make a marker for each feature and add it to the map
-        //     new mapboxgl.Marker(el)
-        //     .setLngLat(marker.geometry.coordinates)
-        //     .setPopup(
-        //     new mapboxgl.Popup({ offset: 25 }) // add popups
-        //     .setHTML(
-        //     '<h3>' +
-        //     marker.properties.title +
-        //     '</h3><p>' +
-        //     marker.properties.description +
-        //     '</p>'
-        //     )
-        //     )
-        //     .addTo(this.mapElement);
-        // });
-            
 
         return (
             <div>
@@ -166,18 +206,13 @@ class Map extends Component{
 
                 <div className={`${MapCss.button} d-flex justify-content-center`}>
                     {this.state.currentCard === 0 ? <Button onClick={()=>this.updateCard(1)}>Add Court</Button> : <div></div>}
-                </div>    
+                </div>     
 
                 <br/>
 
                 <div className={`${MapCss.card} d-flex justify-content-center`}>
-                    {this.displayCard()}
-                </div>    
-
-                {/* <div className="d-flex justify-content-center">
-                    <CardInfo></CardInfo>
-                </div>     */}
-
+                    {this.state.currentCard < 4 ?  this.displayCard() : this.showCourt(this.state.data)}
+                </div>     
             </div>
         )
     }

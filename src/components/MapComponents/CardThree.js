@@ -29,7 +29,7 @@ class CardThree extends Component{
                     </div>
 
                     <div className="d-flex justify-content-center">
-                        <Button>Send court to review</Button>
+                        <Button onClick={() => this.props.uploadToFirebase()}>Send court to review</Button>
                     </div>    
 
                     <div className={`d-flex justify-content-center mt-4 text-center ${CardThreeCss.text} ${CardThreeCss.steps}`}>

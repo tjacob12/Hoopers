@@ -25,8 +25,6 @@ class CardOne extends Component{
         this.search = this.search.bind(this)
 
         this.foundRef = React.createRef();
-
-        console.log(this.props)
     }
 
     search(){

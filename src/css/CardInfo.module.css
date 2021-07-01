@@ -30,15 +30,20 @@
     position: absolute;
     top:0;
     right:0;
+    z-index: 5
 }
 
-.steps{
-    position: absolute;
-    bottom:1em;
-    right:19em;
-}
-
-.background{
+.left{
+    height: 75vh;
+    width: 32.5vw;
     background-color: white;
-    height:100%
+}
+
+.right{
+    height: 70vh;
+    width: 37.5vw;
+}
+
+.hoopersOrange{
+    color:#d48832
 }

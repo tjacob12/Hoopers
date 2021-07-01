@@ -18,6 +18,13 @@ class CardTwo extends Component{
         super(props)
     }
 
+    // updateCourtImageHelper = (acceptedFiles) => {
+    //     console.log(acceptedFiles)
+    //     acceptedFiles.forEach(file => {
+
+    //     })
+    // }
+
     render(){
 
         return (
@@ -28,7 +35,7 @@ class CardTwo extends Component{
                     <div className="h2">Upload Images*</div>
 
                     <div className={`${CardTwoCss.dropzone} mt-3 mb-3`}>
-                        <Dropzone onDrop={acceptedFiles => console.log(acceptedFiles)}>
+                        <Dropzone onDrop={acceptedFiles => this.props.updateCourtImage(acceptedFiles)}>
                             {({getRootProps, getInputProps}) => (
                                 <section>
                                 <div className={`text-center`} {...getRootProps()}>
