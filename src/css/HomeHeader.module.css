@@ -44,3 +44,61 @@
     top:625px;
     transform: translate(-50%,-50%);
   }
+
+  .bHomeHeader {
+    display: inline-block;
+    position:absolute;
+   
+    left:500px;
+    top:400px;
+    font-size: 100px;
+    color: white;
+    animation: fadeIn linear 0.45s;
+    -webkit-animation: fadeIn linear 0.45s;
+    -moz-animation: fadeIn linear 0.45s;
+    -o-animation: fadeIn linear 0.45s;
+    -ms-animation: fadeIn linear 0.45s;
+  }
+  
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  .pHomeHeader{
+    color:white; 
+    /* margin: 10px 0 0 10px; */
+    font-size:100px;
+    position:absolute;
+    left:300px;
+    top:500px;
+     white-space: nowrap;
+    overflow: hidden;
+    width:19em;
+    animation: type 3s steps(19,end); 
+  }
+  
+   @keyframes type{ 
+    from { width: 0; } 
+    
+  }

@@ -43,10 +43,24 @@
     background-color: white;
 }
 
-.search{
+.searchsection{
     width: 35vw;
     left: 17.5em;
     top: 2em;
+}
+
+.searchbar{
+    border-color: black;
+    border-width: 0.05em;
+}
+
+.searchicon{
+    height: 4.5vh;
+    width: auto;
+    position: relative;
+    right: 2.3em;
+    top: 0.15em;
+    z-index: 3; 
 }
 
 .found{

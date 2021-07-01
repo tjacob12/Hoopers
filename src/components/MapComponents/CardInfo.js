@@ -8,7 +8,7 @@ import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
 import Card from 'react-bootstrap/Card';
 import CardInfoCss from '../../css/CardInfo.module.css';
-import x from '../../assets/x.PNG'
+import x from '../../assets/x.png'
 import leftarrow from '../../assets/left-arrow.png'
 import rightarrow from '../../assets/right-arrow.png'
 

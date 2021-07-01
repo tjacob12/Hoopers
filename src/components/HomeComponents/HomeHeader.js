@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 //  import  Row from 'react-bootstrap/Row';
@@ -43,24 +44,15 @@ class HomeHeader extends Component {
 
 
             <div className = "text-center position-relative">
-                <Button className= {`${HomeHeaderCss.vidButton} btnColor`}>WATCH VIDEO</Button>
+                <Link to="/Video">
+                    <Button className= {`${HomeHeaderCss.vidButton} btnColor`}>WATCH VIDEO</Button>
+                </Link>
             </div>
 
-            <div className = 'container'>
-            {/* <form>
-                <div className= 'input-group'>
-                <input type ='text' className='box' placeholder='Search'></input>
-                    <button className='btn btn-dark' type = 'button'>
-                    Button
-                    </button>
-                
-                
-                </div>
-            </form> */}
-            {/* <div className='search'>
-                
-            </div> */}
-            </div>  
+            <div className={`${HomeHeaderCss.animations}`} >
+                <b className={`${HomeHeaderCss.bHomeHeader}`}>NEW COURT</b>
+                <p className={`${HomeHeaderCss.pHomeHeader}`}>AMEIOXERIA-PORTUGAL</p>
+            </div>
     </Container>
     )
   }

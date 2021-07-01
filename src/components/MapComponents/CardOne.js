@@ -8,9 +8,10 @@ import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
 import Card from 'react-bootstrap/Card';
 import CardOneCss from '../../css/CardOne.module.css';
-import x from '../../assets/x.PNG'
+import x from '../../assets/x.png'
 import leftarrow from '../../assets/left-arrow.png'
 import rightarrow from '../../assets/right-arrow.png'
+import searchicon from '../../assets/searchicon.png'
 
 class CardOne extends Component{
 
@@ -47,18 +48,20 @@ class CardOne extends Component{
                                 Filler
                         </div>
                         
-                        <InputGroup className={`${CardOneCss.search}`}>
+                        <InputGroup className={`${CardOneCss.searchsection}`}>
                             <FormControl 
                             placeholder="Search Location"
                             aria-label="Recipient's username"
                             aria-describedby="basic-addon2"
                             value={this.state.searchValue}
-                            onChange={e => this.setState({searchValue: e.target.value})}
+                            onChange={e => {
+                                this.setState({searchValue: e.target.value})
+                                this.props.updateLocation(e.target.value)
+                            }}
+                            className={`${CardOneCss.searchbar}`}
                             type="text"
                             />
-                            <InputGroup.Append>
-                            <Button onClick={this.search}>Button</Button>
-                            </InputGroup.Append>
+                            <img src={searchicon} alt="searchicon" onClick={this.search} className={`${CardOneCss.searchicon}`}/>
                         </InputGroup>
                     </div>
 
@@ -69,10 +72,7 @@ class CardOne extends Component{
                         <br/>
                         1/3
 
-                        <img src={rightarrow} alt="rightarrow" 
-                            className={`${CardOneCss.rightarrow}`} 
-                            onClick={() => this.props.updateCard(2)}
-                        />
+                        <img src={rightarrow} alt="rightarrow" className={`${CardOneCss.rightarrow}`} onClick={() => this.props.updateCard(2)}/>
 
                     </div>       
                 </Card.Body>

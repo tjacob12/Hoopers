@@ -8,7 +8,7 @@ import Card from 'react-bootstrap/Card';
 import CardThreeCss from '../../css/CardThree.module.css';
 import leftarrow from '../../assets/left-arrow.png'
 import rightarrow from '../../assets/right-arrow.png'
-import x from '../../assets/x.PNG'
+import x from '../../assets/x.png'
 
 class CardThree extends Component{
 
@@ -25,7 +25,7 @@ class CardThree extends Component{
                     <div className="h2">What else do you know about this court?</div>
 
                     <div className="form-group">
-                        <textarea className={`${CardThreeCss.textarea}`}></textarea>
+                        <textarea className={`${CardThreeCss.textarea}`} onChange={e => this.props.updateCourtAbout(e.target.value)}></textarea>
                     </div>
 
                     <div className="d-flex justify-content-center">

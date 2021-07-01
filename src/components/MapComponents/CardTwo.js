@@ -9,7 +9,7 @@ import CardTwoCss from '../../css/CardTwo.module.css';
 import leftarrow from '../../assets/left-arrow.png'
 import rightarrow from '../../assets/right-arrow.png'
 import upload from '../../assets/upload.png'
-import x from '../../assets/x.PNG'
+import x from '../../assets/x.png'
 import Dropzone from 'react-dropzone'
 
 class CardTwo extends Component{
@@ -19,6 +19,7 @@ class CardTwo extends Component{
     }
 
     render(){
+
         return (
             <Card className={`${CardTwoCss.card}`}>
                 <Card.Body className={`text-white vw-75 p-4`}>
@@ -46,12 +47,12 @@ class CardTwo extends Component{
                     <Row>
                         <Col className={`${CardTwoCss.subheaders}`}>
                             Email*
-                            <input type="email" className="form-control" aria-describedby="emailHelp" placeholder="Your email"></input>
+                            <input type="email" className="form-control" aria-describedby="emailHelp" placeholder="Your email" onChange={e => this.props.updateCourtEmail(e.target.value)}></input>
                         </Col>
 
                         <Col className={`${CardTwoCss.subheaders}`}>
                             Instagram
-                            <input type="text" className="form-control" aria-describedby="emailHelp" placeholder="Instagram Handle"></input>
+                            <input type="text" className="form-control" aria-describedby="emailHelp" placeholder="Instagram Handle" onChange={e => this.props.updateCourtIG(e.target.value)}></input>
                         </Col>
                     </Row>
 
@@ -62,15 +63,15 @@ class CardTwo extends Component{
                             </div>
     
                             <div className="form-check inline-block">
-                                <input className="form-check-input" type="radio" name="exampleRadios" value="option1" checked/>
-                                <label className="form-check-label" for="exampleRadios1">
+                                <input className="form-check-input" type="radio" name="exampleRadios" value={true} onChange={e => this.props.updateCourtFree(e.target.value)}/>
+                                <label className="form-check-label">
                                     Yes
                                 </label>
                             </div>    
 
                             <div className="form-check">
-                                <input className="form-check-input" type="radio" name="exampleRadios" value="option1" checked/>
-                                <label className="form-check-label" for="exampleRadios1">
+                                <input className="form-check-input" type="radio" name="exampleRadios" value={false} defaultChecked onChange={e => this.props.updateCourtFree(e.target.value)}/>
+                                <label className="form-check-label">
                                     No
                                 </label>
                             </div>   
@@ -78,7 +79,7 @@ class CardTwo extends Component{
 
                         <Col className={`${CardTwoCss.subheaders}`}>
                             Gametime*
-                            <input type="text" className="form-control" aria-describedby="emailHelp" placeholder="Do you know when court is open?"></input>
+                            <input type="text" className="form-control" aria-describedby="emailHelp" placeholder="Do you know when court is open?" onChange={e => this.props.updateCourtGameTime(e.target.value)}></input>
                         </Col>
                     </Row>
 

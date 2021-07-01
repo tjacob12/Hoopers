@@ -24,8 +24,6 @@ onEmailChanged(e) {
 register(e) {
   e.preventDefault();
   console.log(this.state);
-  <input placeholder='your all signed up' />
-  
 }
 
    render() {
@@ -54,7 +52,8 @@ register(e) {
                 
             
             </Col>
-            <Col className='sec3' >
+
+            <Col className='sec3 pl-5' >
             
                 <nav>
                 <a href='#careers at hoopers'>careers at hoopers</a><br></br>
