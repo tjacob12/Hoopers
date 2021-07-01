@@ -102,3 +102,38 @@
     from { width: 0; } 
     
   }
+
+  .searchbox {
+    position:absolute;
+    top:680px;
+    left:1300px;
+    transform: translate(-50%,-50%);
+    background:black;
+    height:50px;
+     padding:10px;
+}
+
+ .searchbox.true > .searchtxt {
+    width:350px;
+   
+}
+
+
+.searchbtn {
+    color:#D48832;
+    float:right;
+    width:40px;
+    height:40px;
+    background:black;
+    justify-content: center;
+    align-items: center;
+} 
+
+.searchtxt {
+    float:left;
+    padding:0;
+    font-size:16px;
+    transition:0.4s;
+    width:0px;
+}
+
